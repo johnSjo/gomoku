@@ -1,0 +1,9 @@
+node_modules/
+jspm_packages/
+dist/
+build/
+.vscode/
+.DS_Store
+npm-debug.log
+.gradle/
+.idea/
