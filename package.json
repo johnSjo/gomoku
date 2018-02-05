@@ -2,7 +2,8 @@
   "name": "gomoku",
   "private": true,
   "scripts": {
-    "start": "meteor run"
+    "start": "meteor run",
+    "dev-debug": "meteor debug --inspect-brk=5959"
   },
   "dependencies": {
     "@babel/runtime": "^7.0.0-beta.36",
@@ -10,5 +11,9 @@
     "react": "^16.2.0",
     "react-addons-pure-render-mixin": "^15.6.2",
     "react-dom": "^16.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^4.17.0",
+    "eslint-config-casumo": "^1.3.0"
   }
 }

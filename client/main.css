@@ -1,1 +1,63 @@
-/* CSS declarations go here */
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.main-board {
+    position: relative;
+    margin: 50px;
+}
+
+#board-pieces {
+    top: 0px;
+    position: absolute;
+}
+
+.black-stone,
+.white-stone,
+.empty-spot {
+    border: 2px solid black;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    border-radius: 22px;
+    margin: 1px;
+}
+
+.black-stone {
+    background: radial-gradient(farthest-corner at 10px 10px,
+        #9e9d9d 1%, #585454 20%, #464341 40%, #1b1b1b 80%);
+    box-shadow: 1px 5px 15px #777471;
+}
+
+.white-stone {
+    background: radial-gradient(farthest-corner at 10px 10px,
+        white 1%, rgb(248, 242, 235) 20%, antiquewhite 40%, rgb(247, 222, 189) 80%);
+    box-shadow: 1px 5px 15px #777471;
+    border: 2px solid rgb(116, 109, 99);
+}
+
+.black-stone,
+.white-stone {
+    opacity: 1;
+    transition: all 0.3s ease;
+}
+
+.empty-spot {
+    opacity: 0;
+    cursor: pointer;
+}
+.empty-spot:hover {
+    opacity: 100;
+    cursor: pointer;
+}
+
+.board-row {
+    display: flex;
+}
+
+#board-grid {
+    position: relative;
+    top: -23px;
+    left: -23px;
+}
+

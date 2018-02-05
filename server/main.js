@@ -1,18 +1,5 @@
 import { Meteor } from 'meteor/meteor';
-import Games from '../imports/api/collections/games.js'; // import Games collection
+import '../imports/api/methods/games.js';
+import '../imports/api/server/publications.js';
 
-const SMALL_BOARD = 15;
-const BIG_BOARD = 19;
-
-Meteor.startup(() => {
-
-    // remove all existing game documents
-    Games.remove({});
-
-    const size = SMALL_BOARD;
-    const board = Array(size).fill(Array(size).fill(null));
-
-    const gameDoc = { board };
-
-    Games.insert(gameDoc);
-});
+Meteor.startup(() => {});
