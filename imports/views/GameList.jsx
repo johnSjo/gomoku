@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Header from './Header.jsx';
 import { GameStatuses } from '../api/models/gomoku.js';
 import { newGame, userJoinGame, userLeaveGame } from '../api/methods/games.js';
 
@@ -47,7 +46,6 @@ export default class GameList extends Component {
         return (
             <div>
                 <div>
-                    <Header user = { this.props.user }/>
                     <h2>List of games</h2>
 
                     {this.activeGames().map((game, index) => {

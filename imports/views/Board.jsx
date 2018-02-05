@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Header from './Header.jsx';
 import { GameStatuses } from '../api/models/gomoku.js';
 import { userPlaceStone } from '../api/methods/games.js';
 
@@ -43,7 +42,7 @@ export default class Board extends Component {
             }
         }
 
-        return (<div>{ status }</div>)
+        return (<div>{ status }</div>);
     }
 
     render() {
@@ -51,7 +50,6 @@ export default class Board extends Component {
 
         return (
             <div>
-                <Header user = { this.props.user }/>
 
                 <button onClick = { this.backToGameList.bind(this) }>Back</button>
                 { this.renderStatus() }

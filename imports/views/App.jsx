@@ -16,6 +16,10 @@ class App extends Component {
         this.setState({ selectedGameId: gameId });
     }
 
+    doLogout() {
+        Meteor.logout();
+    }
+
     returnToGameList() {
         this.setState({ selectedGameId: null });
     }
@@ -26,6 +30,20 @@ class App extends Component {
         });
 
         return selectedGame;
+    }
+
+    addHeader() {
+        return (
+            <div>
+                <h1>Gomoku game</h1>
+
+                {
+                    this.props.user ?
+                    (<button onClick = { this.doLogout.bind(this) }>Logout: { this.props.user.username }</button>) :
+                    null
+                }
+            </div>
+        );
     }
 
     render() {
@@ -40,17 +58,23 @@ class App extends Component {
 
         if (this.state.selectedGameId === null) {
             return (
-                <GameList
-                games = { this.props.games }
-                enterGameHandler = { this.enterGame.bind(this) }
-                user = { this.props.user }/>
+                <div>
+                    { this.addHeader() }
+                    <GameList
+                        games = { this.props.games }
+                        enterGameHandler = { this.enterGame.bind(this) }
+                        user = { this.props.user }/>
+                </div>
             )
         } else {
             return (
-                <Board
-                game = { this.selectedGame() }
-                backToGameListHandler = { this.returnToGameList.bind(this) }
-                user = { this.props.user }/>
+                <div>
+                    { this.addHeader() }
+                    <Board
+                        game = { this.selectedGame() }
+                        backToGameListHandler = { this.returnToGameList.bind(this) }
+                        user = { this.props.user }/>
+                </div>
             )
         }
     }
